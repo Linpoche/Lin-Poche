@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.toast.css">
+
+    <style type="text/css">
+    .box {
+        position: fixed;
+        top: -200px;
+        left: 30%;
+        width: 450px;
+        background-color: #fff;
+        color: #7F7F7F;
+        padding: 20px;
+        border: 2px solid #ccc;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -khtml-border-radius: 20px;
+        -moz-box-shadow: 0 1px 5px #333;
+        -webkit-box-shadow: 0 1px 5px #333;
+        z-index: 101;
+        -webkit-transition: all 3s ease-out;
+        -ms-transition: all 3s ease-out;
+        transition: all 3s ease-out;
+    }
+    
+    .box h1 {
+        border-bottom: 1px dashed #7F7F7F;
+        margin: -20px -20px 0px -20px;
+        padding: 10px;
+        background-color: #FFEFEF;
+        color: #EF7777;
+        -moz-border-radius: 20px 20px 0px 0px;
+        -webkit-border-top-left-radius: 20px;
+        -webkit-border-top-right-radius: 20px;
+        -khtml-border-top-left-radius: 20px;
+        -khtml-border-top-right-radius: 20px;
+    }
+    
+    a.boxclose {
+        float: right;
+        width: 26px;
+        height: 26px;
+        background: transparent url(img/cancel.png) repeat top left;
+        margin-top: -30px;
+        margin-right: -30px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HTML 內容放這邊 -->
+
+        <form class="form-horizontal"
+            method="post" action="http://server2020.epizy.com/echo.php">
+            <div class="form-group">
+                <label for="userNameTextBox"
+                       class="control-label col-sm-2">
+                    <span class="glyphicon glyphicon-user"></span>
+                    帳號
+                </label>
+                <div class="col-sm-10">
+                    <input type="text"
+                           id="userNameTextBox" name="userName"
+                           class="form-control"
+                           placeholder="輸入帳號或E-mail" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordTextBox"
+                       class="control-label col-sm-2">
+                    <span class="glyphicon glyphicon-lock"></span>
+                    密碼
+                </label>
+                <div class="col-sm-10">
+                    <input type="password"
+                           id="passwordTextBox" name="password"
+                           class="form-control"
+                           placeholder="請在此輸入密碼">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" 
+                                   name="rememberMe" value="yes"
+                                   id="rememberMeCheckBox"
+                                   checked />
+                            記住我(下次自動登入)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" name="loginOrCancel" value="login"
+                            id="loginButton"
+                            class="btn btn-success">
+                        <span class="glyphicon glyphicon-off"></span> 登入
+                    </button>
+                    <button type="submit" name="loginOrCancel" value="cancel"
+                            id="cancelButton"
+                            class="btn btn-default">
+                        <span class="glyphicon glyphicon-remove"></span> 取消
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+
+
+
+
+    </div>
+    <div class="box" id="box">
+		<a class="boxclose" id="boxclose"></a>
+		<h1>買電影票送爆米花</h1>
+		<p>現在買電影票，可憑票兌換爆米花二份和可樂一杯</p>
+	</div>
+
+	<script>
+		function doAnimateShow() {
+			document.getElementById("box").style.left = event.clientX + "px";
+			document.getElementById("box").style.top = event.clientY + "px";
+		}
+
+		function doAnimateHide() {
+			document.getElementById("box").style.top = "-200px";
+			event.cancelBubble = true;
+		}
+		
+		document.getElementById("boxclose").onclick = doAnimateHide;
+		
+		document.onclick = doAnimateShow;
+		
+	</script>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.toast.js"></script>
+
+<script>
+    
+// init.
+$(function () {
+
+    // Lab 程式:
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})  // end of init.
+
+</script>
+
+</body>
+</html>
